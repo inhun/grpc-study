@@ -12,3 +12,4 @@ type UserServer struct {
 	DB *sql.DB
 }
 
+func (s *UserServer) GetUser()
