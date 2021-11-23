@@ -13,9 +13,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-const portNumber = "10001"
-
-
+const portNumber = "8080"
 
 func main() {
 	cfg, _ := utils.LoadConfig("config.json")
