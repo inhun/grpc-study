@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net"
+	"fmt"
 
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
@@ -13,7 +14,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-const portNumber = "8080"
+const portNumber = "9000"
 
 func main() {
 	cfg, _ := utils.LoadConfig("config.json")
@@ -33,6 +34,7 @@ func main() {
 	
 	log.Printf("start gRPC server on %s port", portNumber)
 	if err := grpcServer.Serve(lis); err != nil {
+		fmt.Println("errorerrorerrorerrorerrorerrorerrorerror")
 		log.Fatalf("failed")
 	}
 }
