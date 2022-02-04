@@ -1,0 +1,32 @@
+syntax = "proto3";
+ 
+package v1;
+ 
+option go_package = "github.com/inhun/grpc-study/go/v1/proto";
+
+
+service User {
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {}
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse) {}
+}
+ 
+message UserMessage {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+}
+ 
+message GetUserRequest {
+  string id = 1;
+}
+
+message GetUserResponse {
+  UserMessage user_message = 1;
+}
+
+message ListUsersRequest {}
+
+message ListUsersResponse {
+  repeated UserMessage user_messages = 1;
+}
+
